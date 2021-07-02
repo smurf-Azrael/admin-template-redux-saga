@@ -1,0 +1,127 @@
+@import 'variables';
+@import 'mixins';
+
+@include generateTRBL('margin', 0, 1, 2);
+@include generateTRBL('padding', 0, 1, 2);
+@include colorVariant('primary', $color-primary);
+@include colorVariant('secondary', $color-secondary);
+@include colorVariant('success', $color-success);
+@include colorVariant('error', $color-error);
+@include colorVariant('warning', $color-warning);
+@include colorVariant('info', $color-info);
+@include colorVariant('dark', $color-dark);
+@include colorVariant('light', $color-light);
+
+html,
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.starting {
+    img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.app-error {
+    position: absolute;
+    z-index: 999999;
+    background-color: maroon;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+    font-size: 0.85em;
+
+    a {
+        color: #05a1bf;
+        text-decoration: none;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.markdown-body {
+    color: inherit;
+}
+
+.screen-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    & > * {
+        margin-top: -10rem;
+    }
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-xs {
+    font-size: 0.5em;
+}
+
+.font-sm {
+    font-size: 0.75em;
+}
+
+.font-lg {
+    font-size: 1.25em;
+}
+
+.font-xl {
+    font-size: 1.5em;
+}
+
+.font-b {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.dark {
+    .markdown-body {
+        pre {
+            background-color: #424242;
+        }
+    }
+}
+
+/* @bndynet/dialog */
+.bn-loading-overlay .bn-loading-container .bicon.bicon-loading {
+    border-left-color: #303f9f;
+}
+/* TODO: remove after the dialog bugfix */
+.notification-item {
+    max-width: 360px;
+}
